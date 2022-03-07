@@ -1,6 +1,6 @@
 import { ItemData } from '@/types/ItemData'
 
-function saveTodo(todos: ItemData) {
+function saveTodo(todos: ItemData[]) {
   localStorage.setItem("todos_key", JSON.stringify(todos));
 }
 

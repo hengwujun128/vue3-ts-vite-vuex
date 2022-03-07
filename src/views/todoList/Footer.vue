@@ -14,8 +14,7 @@ export default defineComponent({
     name: "Footer",
     props: {
       todoList: {
-        // type: Array as ()=>ItemData[],
-        type: Array,
+        type: Array as ()=>ItemData[],
         required: true
       },
       isCompletedAll: {
@@ -32,13 +31,14 @@ export default defineComponent({
       const count = computed(() => {
         return props.todoList.reduce((pre: number, todo: ItemData) => pre + (todo.isCompleted ? 1 : 0), 0);
       });
-      // 是否全选操作
+      // 是否全选操作: checkbox 值是Boolean类型
       const isCheckedAll = computed({
         get: () => {
-          // console.log(count)
+          console.log('----get----', count)
           return count.value > 0 && count.value === props.todoList.length;
         },
         set: val => {
+          console.log('----set----', val)
           props.isCompletedAll(val);
         }
       });

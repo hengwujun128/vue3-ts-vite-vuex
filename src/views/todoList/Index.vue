@@ -1,6 +1,5 @@
 <template>
   <div class="todoList">
-    <h2>this is a todoList</h2>
     <Header :addPlan="addPlan"></Header>
     <List :todo-list="todoList"></List>
     <Footer :todoList="todoList" :isCompletedAll="isCompletedAll" :clearCompleted="clearCompleted
@@ -9,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive,toRefs, onMounted, watch,provide } from 'vue'
+import { defineComponent, reactive, toRefs, onMounted, watch,provide } from 'vue'
 import {ItemData} from '@/types/ItemData'
 
 import Header from './Header.vue';
@@ -49,7 +48,7 @@ export default defineComponent({
     const addPlan = (todo:ItemData) => {
       state.todoList.unshift(todo)
     }
-    const delPlan = (id: Number) => {
+    const delPlan = (id: number) => {
       state.todoList.splice(id, 1)
     }
     const updateState = (todo: ItemData, val: boolean) => {
@@ -67,8 +66,8 @@ export default defineComponent({
     provide('delPlan', delPlan)
     provide('updateState', updateState)
 
-    // 注意： watch 这里watch 一一个函数
-    watch(()=> state.todoList, saveTodo, {deep: true})
+    // 注意： 我想监听一个数组
+    watch(()=>state.todoList, saveTodo, {deep: true})
 
     return {
       // 将state中的所有属性转换为ref对象 ，用的时候直接使用属性名称即可
