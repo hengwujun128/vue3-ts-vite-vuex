@@ -5,7 +5,8 @@ export const lang = {
         home: "Home",
         about: "About",
         example: "Example",
-        todoList: 'TodoList'
+        todoList: 'TodoList',
+        todoList2: 'TodoList2',
     },
     buttons: {
         changeLanguage: "change language"

@@ -54,6 +54,11 @@ function loadRoutersHandler() {
       path: '/todoList',
       name: 'TodoList',
       component:() => import('@/views/todoList/Index.vue')
+    },
+    {
+      path: '/todoList2',
+      name: 'TodoList2',
+      component: () => import('@/views/todoList2/Index.vue')
     }
   ]
   return routers

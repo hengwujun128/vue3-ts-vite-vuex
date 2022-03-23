@@ -5,7 +5,8 @@ export const lang = {
       home: "首页",
       about: "关于",
       example: "示例",
-      todoList: 'TodoList'
+      todoList: 'TodoList',
+      todoList2: 'TodoList2',
     },
     buttons: {
         changeLanguage: "切换语言"

@@ -26,7 +26,7 @@ export default defineComponent({
     // use inject to get parent method
     const delTodo: Function | undefined = inject('delPlan')
     // custom method
-    const del  = (index: Number) => {
+    const del  = (index: Number | undefined) => {
       if (window.confirm('确认删除吗?')) {
         if (typeof delTodo === 'function') {
           delTodo(index)
